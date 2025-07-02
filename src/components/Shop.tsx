@@ -3,8 +3,10 @@ import ProductCard from "../components/ProductCard";
 import { products } from "../Data/Products";
 import { TbCircuitSwitchOpen } from "react-icons/tb";
 import FilterSidebar from "../components/FilterSidebar";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
-const PER_PAGE = 9;
+const PER_PAGE = 12;
 
 const CustomProductGrid = () => {
   const [page, setPage] = useState(1);
@@ -44,20 +46,44 @@ const CustomProductGrid = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-8">
-          {Array.from({ length: totalPages }).map((_, i) => (
+        {/* Custom Pagination */}
+        <div className="flex justify-center items-center gap-2 mt-8">
+          {/* Prev button if not on first page */}
+          {page > 1 && (
             <button
-              key={i}
-              onClick={() => setPage(i + 1)}
-              className={`px-4 py-2 mx-1 text-sm border rounded ${
-                page === i + 1
-                  ? "bg-black text-white"
-                  : "bg-white text-gray-800 hover:bg-gray-100"
-              }`}
+              onClick={() => setPage(page - 1)}
+              className="w-13 h-13 rounded-full border border-gray-600 flex items-center justify-center hover:bg-[#C69657] hover:text-white cursor-pointer hover:border-0 transition"
             >
-              {i + 1}
+              <IoIosArrowBack size={22} />
             </button>
-          ))}
+          )}
+
+          {/* Page buttons (always showing 1 and 2 for now) */}
+          {[1, 2].map((pg) =>
+            pg <= totalPages ? (
+              <button
+                key={pg}
+                onClick={() => setPage(pg)}
+                className={`w-13 cursor-pointer h-13 rounded-full ${
+                  page === pg
+                    ? "bg-black text-white"
+                    : "bg-white border border-gray-800 hover:bg-[#C69657] hover:border-0 hover:text-white"
+                } flex items-center justify-center transition`}
+              >
+                {pg}
+              </button>
+            ) : null
+          )}
+
+          {/* Next button if not on last page */}
+          {page < totalPages && (
+            <button
+              onClick={() => setPage(page + 1)}
+              className="w-13 h-13 rounded-full border border-gray-600  flex items-center justify-center hover:bg-[#C69657] hover:text-white cursor-pointer hover:border-0 transition"
+            >
+              <IoIosArrowForward size={22} />
+            </button>
+          )}
         </div>
       </section>
 

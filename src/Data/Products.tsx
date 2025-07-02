@@ -99,5 +99,158 @@ export const products: Product[] = [
       "https://images.pexels.com/photos/6311409/pexels-photo-6311409.jpeg"
     ],
   },
+
+
+  {
+    id: 101,
+    name: "Nora Chair",
+    description:
+      "The Nora Chair will transform your dining room decor into a memorable space. A dining chair perfect for residential projects.",
+    price: 1200,
+    brand: "Hommes Studio",
+    slug: "nora-chair",
+    images: [
+        "../../Images/nora.jpg",
+      "../../Images/ajui2.png",
+
+    ],
+  },
+  {
+    id: 102,
+    name: "Karmen Dining Chair",
+    description:
+      "Karmen Chair adds instant class into your modern dining room. A luxury dining chair is a must-have in any high-end interior design project.",
+    price: 1500,
+    brand: "Hommes Studio",
+    slug: "karmen-dining-chair",
+    images: [
+        "../../Images/karmen.jpg",
+      "../../Images/ajui2.png",
+
+    ],
+  },
+  {
+    id: 103,
+    name: "Davis Chair",
+    description:
+      "Davis Dining Chair exudes a quiet elegance and undeniably luxury energy. This modern dining chair is perfect for a luxury dining room project",
+    price: 1500,
+    brand: "Hommes Studio",
+    slug: "davis-chair",
+    images: 
+    [
+        "../../Images/davis.jpg",
+      "../../Images/ajui2.png",
+
+    ],
+  },
+  {
+    id: 104,
+    name: "Joanne Dining Chair",
+    description:
+      "Joanne Chair is a mid-century style dining chair. A modern dining chair made to improve the home experience of its owner.",
+    price: 700,
+    brand: "Lisola",
+    slug: "joanne-dining-chair",
+    images: [
+        "../../Images/ajui.jpg",
+        "../../Images/ajui2.png",
+    ],
+  },
+  {
+    id: 105,
+    name: "Cinco Chair",
+    description:
+      "The Cinco chair is a bold design with beauty and subtleness in all details and the perfect balance between comfort and quality.",
+    price: 800,
+    brand: "Moa",
+    slug: "cinco-chair",
+    images: [
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
+    ],
+  },
+  {
+    id: 106,
+    name: "Prymo Dining Table Natural",
+    description:
+      "Prymo Dining Table Natural is the ideal design for an effortless elegant indoor or outdoor dining room.",
+    price: 1400,
+    brand: "Moa",
+    slug: "prymo-dining-table-natural",
+    images: [
+      "../../Images/ajui2.png",
+    ],
+  },
+  {
+    id: 107,
+    name: "Fifih Side Tables Set",
+    description:
+      "Fifih Side Table Set is a set of three wooden side tables allowing multiple variations and combinations.",
+    price: 2600,
+    brand: "Lisola",
+    slug: "fifih-side-tables-set",
+    images: [
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
+    ],
+  },
+  {
+    id: 108,
+    name: "Lunarys Center Table Natural",
+    description:
+      "Lunarys Center Table Natural is an outstanding modern design piece perfect for indoor or outdoor projects.",
+    price: 1800,
+    brand: "Hommes Studio",
+    slug: "lunarys-center-table-natural",
+    images: [
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
+    ],
+  },
+  {
+    id: 109,
+    name: "Prymo Rectangular Dining Table Natural",
+    description:
+      "Prymo Rectangular Dining Table Natural is the ideal design for an effortless elegant indoor or outdoor dining room.",
+    price: 3600,
+    brand: "Hommes Studio",
+    slug: "prymo-rectangular-dining-table-natural",
+    images: [
+        "../../Images/kara.jpg",
+        
+      "../../Images/ajui2.png",
+    ],
+
+  },
+  {
+    id: 110,
+    name: "Lunarys Large Side Table Natural",
+    description:
+      "Lunarys Large Side Table Natural is a modern outdoor piece, the stone side table’s body and legs are crafted in natural sandblaster beige limestone, delivering a raw yet luxurious style to any contemporary outdoor project.",
+    price: 3000,
+    brand: "Hommes Studio",
+    slug: "lunarys-large-side-table-natural",
+    images: [
+        "../../Images/kara.jpg",
+        
+      "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
+    ],
+  },
+  {
+    id: 111,
+    name: "Fuchsia I Side Table",
+    description:
+      "Fuschia I side table is the ideal cocktail table for modern living rooms. A Memphis design with layers of brave shapes and bold textures.",
+    price: 1500,
+    brand: "Hommes Studio",
+    slug: "fuchsia-i-side-table",
+    images: [
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
+    ],
+  },
   // continue adding slug for the rest of the products...
 ];
