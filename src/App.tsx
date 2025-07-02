@@ -1,0 +1,22 @@
+import './App.css'
+import './index.css'
+import { Routes, Route } from "react-router-dom"
+// import Home from './pages/Home'
+import Products from './pages/Products'
+// import Navbar from './components/Navbar'
+import Landing from './pages/Landing'
+
+function App() {
+
+  return (
+    <>
+     <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/shop" element={<Products />} />
+          {/* <Route path="/products" element={<Products />} /> */}
+        </Routes>
+    </>
+  )
+}
+
+export default App
