@@ -58,7 +58,7 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <div
-      className="w-full min-h-[100vh] bg-cover bg-center md:pr-30 md:py-20 flex items-center  justify-center md:justify-end overflow-y-auto"
+      className="w-full min-h-[100vh] bg-cover bg-center p-10 px-17 md:pr-30 md:py-20 flex items-center  justify-center md:justify-end overflow-y-auto"
       style={{ backgroundImage: "url('../../Images/landing.png')" }}
     >
       <div className="bg-opacity-90 w-[90%]h-[90%] max-w-[500px] ">
