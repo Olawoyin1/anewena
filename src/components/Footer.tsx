@@ -1,4 +1,6 @@
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
+import { FaXTwitter } from "react-icons/fa6";
 const links = [
   { href: "/about", label: "About us" },
   { href: "/faq", label: "FAQ" },
@@ -11,10 +13,11 @@ const links = [
 
 export default function Footer() {
   return (
-    <section className="w-full mt-10 bg-white border-t border-gray-900 py-[65px] px-[70px] flex flex-wrap md:flex-nowrap">
+    <div className="w-full mt-10 bg-black text-white border-t border-gray-900 py-[65px] px-[70px]">
+    <section className="w-full py-[60px] px-[70px] flex flex-wrap md:flex-nowrap">
       {/* Left */}
       <div className="w-full md:w-1/3 pr-0 md:pr-[50px] ">
-        <h2 className="text-[15px] font-semibold uppercase leading-[20px] tracking-wide text-gray-900">
+        <h2 className="text-[15px] font-semibold uppercase leading-[20px] tracking-wide ">
           Sign up to get 10% off your first order and stay up to date on the latest product releases, special offers and news
         </h2>
         <form className="flex mt-3 flex-col">
@@ -24,11 +27,11 @@ export default function Footer() {
             required
             placeholder="Your Email *"
             className="w-full border border-gray-300 px-4 py-2 text-sm outline-none"
-          />
+            />
           <button
             type="submit"
-            className="mt-4 w-fit inline-block border border-gray-900 text-gray-900 font-semibold uppercase text-xs px-6 py-3 tracking-wide hover:bg-gray-100 transition"
-          >
+            className="mt-4 w-fit inline-block border border-gray-300  font-semibold uppercase text-xs px-6 py-3 tracking-wide hover:bg-gray-100 transition"
+            >
             Subscribe
           </button>
         </form>
@@ -41,7 +44,7 @@ export default function Footer() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[12px] font-semibold uppercase tracking-wide text-gray-900 hover:opacity-70 transition"
+                className="text-[12px] font-semibold uppercase tracking-wide  hover:opacity-70 transition"
               >
                 {link.label}
               </a>
@@ -52,9 +55,48 @@ export default function Footer() {
 
       {/* Right (Links) */}
       <div className="w-full md:w-1/3 pl-0 md:pl-[50px] space-y-3 mt-8 md:mt-0">
-        <li className="text-[12px] font-semibold uppercase tracking-wide text-gray-900 hover:opacity-70 transition">PHONE : +1 712-339-9294</li>
-        <li className="text-[12px] font-semibold uppercase tracking-wide text-gray-900 hover:opacity-70 transition">EMAIL : INFO@IDEAISCAPITAL.COM</li>
+        <li className="text-[12px] font-semibold uppercase tracking-wide hover:opacity-70 transition">PHONE : +1 712-339-9294</li>
+        <li className="text-[12px] font-semibold uppercase tracking-wide hover:opacity-70 transition">EMAIL : INFO@IDEAISCAPITAL.COM</li>
       </div>
+
+
+
+
+
     </section>
+    <footer className="w-full  px-[70px] flex flex-wrap items-center md:flex-nowrap">
+      {/* Logo */}
+      <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-2 md:mb-0">
+        <img
+          src="https://firebrick-manatee-316512.hostingersite.com/wp-content/uploads/2023/04/ricky-2152262473.png"
+          alt="Logo"
+          className="max-w-[325px] h-auto"
+        />
+      </div>
+
+      {/* Text */}
+      <div className="w-full md:w-1/3 px-0 md:px-[50px] mt-8 md:mt-0">
+        <p className="text-[12px] tracking-wide">
+          © 2023 Moderno Theme. All Rights Reserved.
+        </p>
+      </div>
+
+      {/* Socials */}
+      <div className="w-full md:w-1/3 pl-0 md:pl-[50px] flex mt-8 md:mt-0">
+        <a href="#" aria-label="Facebook" className="hover:text-black border p-3 border-gray-400 transition">
+          <FaFacebookF />
+        </a>
+        <a href="#" aria-label="Instagram" className="hover:text-black border p-3 border-gray-400 transition">
+          <FaInstagram />
+        </a>
+        <a href="#" aria-label="Twitter" className="hover:text-black border p-3 border-gray-400 transition">
+          <FaXTwitter />
+        </a>
+        <a href="#" aria-label="YouTube" className="hover:text-black border p-3 border-gray-400 transition">
+          <FaYoutube />
+        </a>
+      </div>
+    </footer>
+    </div>
   );
 }
