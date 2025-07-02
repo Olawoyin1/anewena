@@ -5,6 +5,8 @@ import { products } from "../Data/Products";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { GoPlus } from "react-icons/go";
+import { HiOutlineMinus } from "react-icons/hi2";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -108,20 +110,18 @@ const ProductDetails = () => {
           </p>
 
           {/* Quantity Selector */}
-          <div className="flex items-center   gap-2 mt-4">
-            <div className="flex w-fit items-center border border-gray-700 gap-4 text-lg font-medium">
-              <button onClick={decrease} className="px-3 py-2  ">
-                -
-              </button>
-              <span>{quantity}</span>
-              <button onClick={increase} className="px-3 py-2">
-                +
-              </button>
-            </div>
-            <button className="bg-black text-white px-6 py-3  text-sm hover:bg-gray-800 w-full sm:w-auto">
-              Add to Cart
-            </button>
-          </div>
+          {/* Quantity Selector for Desktop */}
+<div className="hidden sm:flex items-center gap-2 mt-4">
+  <div className="flex items-center border border-gray-700 gap-4 text-lg font-medium">
+      <button onClick={decrease} className="px-3 py-3"><HiOutlineMinus /></button>
+      <span>{quantity}</span>
+      <button onClick={increase} className="px-3 py-3"><GoPlus /></button>
+    </div>
+  <button className="bg-black text-white px-6 py-3 text-sm hover:bg-gray-800 w-full sm:w-auto">
+    Add to Cart
+  </button>
+</div>
+
 
           {/* Metadata */}
           <div className="mt-6 text-sm text-gray-600 leading-6 space-y-1">
@@ -140,6 +140,21 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+
+{/* Fixed bottom quantity selector for mobile */}
+<div className="fixed bottom-0 left-0 w-full sm:hidden bg-white border-t z-50">
+  <div className="flex items-center  px-4 py-3 gap-2">
+    <div className="flex items-center border border-gray-700 gap-4 text-lg font-medium">
+      <button onClick={decrease} className="px-3 py-3"><HiOutlineMinus /></button>
+      <span>{quantity}</span>
+      <button onClick={increase} className="px-3 py-3"><GoPlus /></button>
+    </div>
+    <button className="bg-black w-full uppercase col-span-2 text-white px-6 py-3 text-sm hover:bg-gray-800">
+      Add to Cart
+    </button>
+  </div>
+</div>
 
       <Footer />
     </>
