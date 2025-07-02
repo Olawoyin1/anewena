@@ -13,8 +13,8 @@ const links = [
 
 export default function Footer() {
   return (
-    <div className="w-full mt-10 bg-black text-white border-t border-gray-900 py-[65px] px-[70px]">
-    <section className="w-full py-[60px] px-[70px] flex flex-wrap md:flex-nowrap">
+    <div className="w-full mt-10 bg-black text-white border-t border-gray-900 py-[65px] ">
+    <section className="w-full py-[60px] px-10 md:px-[70px] flex flex-wrap md:flex-nowrap">
       {/* Left */}
       <div className="w-full md:w-1/3 pr-0 md:pr-[50px] ">
         <h2 className="text-[15px] font-semibold uppercase leading-[20px] tracking-wide ">
@@ -64,7 +64,7 @@ export default function Footer() {
 
 
     </section>
-    <footer className="w-full  px-[70px] flex flex-wrap items-center md:flex-nowrap">
+    <footer className="w-full px-10 justify-center md:px-[70px] flex flex-wrap-reverse items-center md:flex-nowrap">
       {/* Logo */}
       <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-2 md:mb-0">
         <img
@@ -75,14 +75,14 @@ export default function Footer() {
       </div>
 
       {/* Text */}
-      <div className="w-full md:w-1/3 px-0 md:px-[50px] mt-8 md:mt-0">
-        <p className="text-[12px] tracking-wide">
+      <div className="w-full md:w-1/3 px-0 md:px-[50px] my-8 md:my-0 ">
+        <p className="text-[12px] text-center md:text-start tracking-wide">
           © 2023 Moderno Theme. All Rights Reserved.
         </p>
       </div>
 
       {/* Socials */}
-      <div className="w-full md:w-1/3 pl-0 md:pl-[50px] flex mt-8 md:mt-0">
+      <div className="w-full md:w-1/3 pl-0 md:pl-[50px] flex justify-center md:justify-start mt-8 md:mt-0">
         <a href="#" aria-label="Facebook" className="hover:text-black border p-3 border-gray-400 transition">
           <FaFacebookF />
         </a>
