@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Product } from "../Types/ProductsTypes";
 import { IoEyeOutline, IoAdd } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   product: Product;
@@ -20,6 +21,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       onMouseLeave={() => setHovered(false)}
     >
       <div className="relative aspect-[4/5] h-100 w-full overflow-hidden flex items-center justify-center bg-white hover:bg-[#F4F4F4]">
+        <Link to={`/product/${product.id}`}>
         <motion.img
           src={mainImage}
           alt={product.name}
@@ -27,8 +29,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
           initial={{ opacity: 1, scale: 1 }}
           animate={{ opacity: hovered ? 0 : 1, scale: hovered ? 1.05 : 1 }}
           transition={{ duration: 0.4 }}
-        />
+          />
+          </Link>
 
+        <Link to={`/product/${product.id}`}>
         <motion.img
           src={hoverImage}
           alt={`${product.name} alternate`}
@@ -36,7 +40,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
           initial={{ opacity: 0, scale: 1 }}
           animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1.05 : 1 }}
           transition={{ duration: 0.4 }}
-        />
+          />
+          </Link>
 
         <div className="absolute bottom-2 px-1 w-full grid grid-cols-2 gap-1 opacity-0 group-hover:opacity-100 transition duration-300">
           <button className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black hover:text-white transition-all">

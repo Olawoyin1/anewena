@@ -14,10 +14,8 @@ export const products: Product[] = [
     images: [
       "../../Images/ajui.jpg",
       "../../Images/ajui2.png",
-    //   "https://images.pexels.com/photos/6311395/pexels-photo-6311395.jpeg",
-    //   "https://images.pexels.com/photos/2983466/pexels-photo-2983466.jpeg",
-    //   "https://images.pexels.com/photos/6311396/pexels-photo-6311396.jpeg",
-    //   "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg"
+      "../../Images/ajui.jpg",
+      "../../Images/ajui2.png",
     ],
   },
   {
@@ -31,12 +29,8 @@ export const products: Product[] = [
     images: [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
+      "../../Images/ajui2.png",
         "../../Images/kara1.jpg",
-      "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg",
-      "https://images.pexels.com/photos/279747/pexels-photo-279747.jpeg",
-      "https://images.pexels.com/photos/279748/pexels-photo-279748.jpeg",
-      "https://images.pexels.com/photos/279749/pexels-photo-279749.jpeg",
-      "https://images.pexels.com/photos/279750/pexels-photo-279750.jpeg"
     ],
   },
   {
@@ -50,12 +44,8 @@ export const products: Product[] = [
     images: [
         "../../Images/lisola.jpg",
       "../../Images/ajui2.png",
+      "../../Images/ajui2.png",
         "../../Images/kara.jpg",
-      "https://images.pexels.com/photos/2983467/pexels-photo-2983467.jpeg",
-      "https://images.pexels.com/photos/6311398/pexels-photo-6311398.jpeg",
-      "https://images.pexels.com/photos/6311399/pexels-photo-6311399.jpeg",
-      "https://images.pexels.com/photos/6311400/pexels-photo-6311400.jpeg",
-      "https://images.pexels.com/photos/6311401/pexels-photo-6311401.jpeg"
     ],
   },
   {
@@ -70,12 +60,8 @@ export const products: Product[] = [
     images: [
         "../../Images/slisola.jpg",
       "../../Images/ajui2.png",
-        "../../Images/kara.jpg",
-      "https://images.pexels.com/photos/2983470/pexels-photo-2983470.jpeg",
-      "https://images.pexels.com/photos/6311402/pexels-photo-6311402.jpeg",
-      "https://images.pexels.com/photos/6311403/pexels-photo-6311403.jpeg",
-      "https://images.pexels.com/photos/6311404/pexels-photo-6311404.jpeg",
-      "https://images.pexels.com/photos/6311405/pexels-photo-6311405.jpeg"
+      "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
     ],
   },
   {
@@ -92,11 +78,8 @@ export const products: Product[] = [
     images: [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
-      "https://images.pexels.com/photos/2983471/pexels-photo-2983471.jpeg",
-      "https://images.pexels.com/photos/6311406/pexels-photo-6311406.jpeg",
-      "https://images.pexels.com/photos/6311407/pexels-photo-6311407.jpeg",
-      "https://images.pexels.com/photos/6311408/pexels-photo-6311408.jpeg",
-      "https://images.pexels.com/photos/6311409/pexels-photo-6311409.jpeg"
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
     ],
   },
 
@@ -110,6 +93,8 @@ export const products: Product[] = [
     brand: "Hommes Studio",
     slug: "nora-chair",
     images: [
+        "../../Images/nora.jpg",
+      "../../Images/ajui2.png",
         "../../Images/nora.jpg",
       "../../Images/ajui2.png",
 
@@ -126,6 +111,8 @@ export const products: Product[] = [
     images: [
         "../../Images/karmen.jpg",
       "../../Images/ajui2.png",
+      "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
 
     ],
   },
@@ -141,7 +128,8 @@ export const products: Product[] = [
     [
         "../../Images/davis.jpg",
       "../../Images/ajui2.png",
-
+      "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
     ],
   },
   {
@@ -155,6 +143,8 @@ export const products: Product[] = [
     images: [
         "../../Images/ajui.jpg",
         "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
     ],
   },
   {
@@ -168,6 +158,8 @@ export const products: Product[] = [
     images: [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
+      "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
     ],
   },
   {
@@ -180,6 +172,9 @@ export const products: Product[] = [
     slug: "prymo-dining-table-natural",
     images: [
       "../../Images/ajui2.png",
+      "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
     ],
   },
   {
@@ -191,6 +186,8 @@ export const products: Product[] = [
     brand: "Lisola",
     slug: "fifih-side-tables-set",
     images: [
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
@@ -206,6 +203,8 @@ export const products: Product[] = [
     images: [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
     ],
   },
   {
@@ -218,8 +217,10 @@ export const products: Product[] = [
     slug: "prymo-rectangular-dining-table-natural",
     images: [
         "../../Images/kara.jpg",
+        "../../Images/ajui2.png",
+        "../../Images/kara.jpg",
+        "../../Images/ajui2.png",
         
-      "../../Images/ajui2.png",
     ],
 
   },
@@ -232,6 +233,7 @@ export const products: Product[] = [
     brand: "Hommes Studio",
     slug: "lunarys-large-side-table-natural",
     images: [
+        "../../Images/kara.jpg",
         "../../Images/kara.jpg",
         
       "../../Images/ajui2.png",
@@ -249,7 +251,8 @@ export const products: Product[] = [
     images: [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
-        "../../Images/kara.jpg",
+      "../../Images/kara.jpg",
+      "../../Images/ajui2.png",
     ],
   },
   // continue adding slug for the rest of the products...

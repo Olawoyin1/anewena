@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom"
 import Products from './pages/Products'
 // import Navbar from './components/Navbar'
 import Landing from './pages/Landing'
+import ProductDetails from './pages/ProductDetails'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
      <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/shop" element={<Products />} />
-          {/* <Route path="/products" element={<Products />} /> */}
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
     </>
   )
