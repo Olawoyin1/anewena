@@ -14,7 +14,7 @@ const links = [
 export default function Footer() {
   return (
     <div className="w-full mt-10 bg-black text-white border-t border-gray-900 py-[65px] ">
-    <section className="w-full py-[60px] px-10 md:px-[70px] flex flex-wrap md:flex-nowrap">
+    <section className="w-full py-2 md:py-[60px] px-4 md:px-[70px] flex flex-wrap md:flex-nowrap">
       {/* Left */}
       <div className="w-full md:w-1/3 pr-0 md:pr-[50px] ">
         <h2 className="text-[15px] font-semibold uppercase leading-[20px] tracking-wide ">

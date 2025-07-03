@@ -26,7 +26,7 @@ const CustomProductGrid = () => {
   return (
     <>
       <div
-        className={`sticky top-14 z-50 px-4 py-3 flex justify-end transition-all duration-300 ${
+        className={`sticky top-16 z-50 px-4 py-3 flex justify-end transition-all duration-300 ${
           isSticky ? "border-gray-200" : "bg-none"
         }`}
       >
