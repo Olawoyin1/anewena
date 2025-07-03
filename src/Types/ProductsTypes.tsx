@@ -10,3 +10,7 @@ export type Product = {
   rating?: number;
   images: string[]; // image[0] is cover, others are for gallery
 };
+
+
+// For the cart:
+export type CartItem = Product & { quantity: number };

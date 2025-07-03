@@ -7,15 +7,19 @@ import Products from './pages/Products'
 import Landing from './pages/Landing'
 import ProductDetails from './pages/ProductDetails'
 import AboutUs from './pages/About'
+import Login from './pages/Login'
+import CartSidebar from './components/CartSidebar'
 
 function App() {
 
   return (
     <>
+    <CartSidebar />
      <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/shop" element={<Products />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
     </>

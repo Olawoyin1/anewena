@@ -4,14 +4,24 @@ import { IoEyeOutline, IoAdd } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import QuickViewModal from "./QuickViewModal";
+import { useCartStore } from "../utils/cartStore";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+    const addToCart = useCartStore((state) => state.addToCart);
+  const toggleCart = useCartStore((state) => state.toggleCart);
   const [hovered, setHovered] = useState(false);
   const [showQuickView, setShowQuickView] = useState(false);
+
+
+
+  const handleAdd = () => {
+    addToCart({ ...product, quantity: 1 });
+    toggleCart(); // open the cart drawer
+  };
 
   const mainImage = product.images[0];
   const hoverImage = product.images[1] || product.images[0];
@@ -49,7 +59,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <button onClick={() => setShowQuickView(true)} className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black cursor-pointer hover:text-white transition-all">
             <IoEyeOutline /> <span>Quick View</span>
           </button>
-          <button className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black hover:text-white cursor-pointer transition-all">
+          <button onClick={handleAdd} className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black hover:text-white cursor-pointer transition-all">
             <IoAdd /> <span>Add to Cart</span>
           </button>
         </div>
