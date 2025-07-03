@@ -14,7 +14,7 @@ const HeaderBar = () => {
 
   return (
     <header className="w-full bg-white s sticky border-b top-0 z-50">
-      <div className="container mx-auto px-4 py-4  flex items-center justify-between">
+      <div className="mx-auto px-4 md:px-10 py-5  flex items-center justify-between">
         {/* Mobile: Menu Icon */}
         <div className="flex items-center gap-4 md:hidden">
           <button
@@ -36,26 +36,27 @@ const HeaderBar = () => {
         {/* Logo (Center) */}
         <div className="flex-1 flex justify-center">
             <Link to="/shop">
-                <h3 className="tracking-[8px] font-extrabold">ANEWENA</h3>
+                <h3  className="tracking-[8px] text-2xl font-extrabold">ANEWENA</h3>
             </Link>
         </div>
 
         {/* Icons Right (Desktop: All, Mobile: One icon) */}
         <div className="flex items-center gap-4 text-black">
+          <div className="hidden md:flex items-center gap-4">
+           <a href="/my-account" aria-label="Account" className="text-lg">
+              <LuUserRound />
+            </a>
           <a href="/cart" aria-label="Cart" className="text-lg">
             <GoSearch />
           </a>
           <a href="/cart" aria-label="Cart" className="text-lg">
             <IoIosHeartEmpty />
           </a>
-          <a href="/cart" aria-label="Cart" className="text-lg">
+          </div>
+          
+            <a href="/cart" aria-label="Cart" className="text-lg">
             <IoCartOutline />
           </a>
-          <div className="hidden md:flex items-center gap-4">
-            <a href="/my-account" aria-label="Account" className="text-lg">
-              <LuUserRound />
-            </a>
-          </div>
         </div>
       </div>
 
