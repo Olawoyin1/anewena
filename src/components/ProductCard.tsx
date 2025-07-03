@@ -3,6 +3,7 @@ import { Product } from "../Types/ProductsTypes";
 import { IoEyeOutline, IoAdd } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import QuickViewModal from "./QuickViewModal";
 
 interface ProductCardProps {
   product: Product;
@@ -10,6 +11,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const [hovered, setHovered] = useState(false);
+  const [showQuickView, setShowQuickView] = useState(false);
 
   const mainImage = product.images[0];
   const hoverImage = product.images[1] || product.images[0];
@@ -44,14 +46,20 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </Link>
 
         <div className="absolute bottom-2 px-1 w-full grid grid-cols-2 gap-1 opacity-0 group-hover:opacity-100 transition duration-300">
-          <button className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black hover:text-white transition-all">
+          <button onClick={() => setShowQuickView(true)} className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black cursor-pointer hover:text-white transition-all">
             <IoEyeOutline /> <span>Quick View</span>
           </button>
-          <button className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black hover:text-white transition-all">
+          <button className="uppercase text-xs flex items-center justify-center gap-2 bg-white font-semibold text-gray-800 px-3 py-3 hover:bg-black hover:text-white cursor-pointer transition-all">
             <IoAdd /> <span>Add to Cart</span>
           </button>
         </div>
       </div>
+
+      <QuickViewModal
+        product={product}
+        isOpen={showQuickView}
+        onClose={() => setShowQuickView(false)}
+        />
 
       <div className="p-5 text-start">
         <div className="text-[11px] font-medium uppercase tracking-[0.6875px] text-[#070707]">
