@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import { products } from "../Data/Products";
 import { TbCircuitSwitchOpen } from "react-icons/tb";
 import FilterSidebar from "../components/FilterSidebar";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";     
 import { IoIosArrowBack } from "react-icons/io";
 
 const PER_PAGE = 12;
@@ -26,7 +26,7 @@ const CustomProductGrid = () => {
   return (
     <>
       <div
-        className={`sticky top-16 z-50 px-4 py-3 flex justify-end transition-all duration-300 ${
+        className={`sticky top-16 z-10 px-4 py-3 flex justify-end transition-all duration-300 ${
           isSticky ? "border-gray-200" : "bg-none"
         }`}
       >

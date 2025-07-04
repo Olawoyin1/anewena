@@ -5,10 +5,10 @@ const links = [
   { href: "/about", label: "About us" },
   { href: "/faq", label: "FAQ" },
   { href: "/shipping", label: "Shipping" },
-  { href: "/returns", label: "Returns" },
-  { href: "/design-with-us", label: "Design with us" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms & Conditions" },
+  { href: "/partner", label: "Partner with us" },
+  // { href: "/returns", label: "Returns" },
+  // { href: "/privacy-policy", label: "Privacy Policy" },
+  // { href: "/terms", label: "Terms & Conditions" },
 ];
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
       {/* Left */}
       <div className="w-full md:w-1/3 pr-0 md:pr-[50px] ">
         <h2 className="text-[15px] font-semibold uppercase leading-[20px] tracking-wide ">
-          Sign up to get 10% off your first order and stay up to date on the latest product releases, special offers and news
+          Subscribe to our newsleter
         </h2>
         <form className="flex mt-3 flex-col">
           <input
@@ -30,7 +30,7 @@ export default function Footer() {
             />
           <button
             type="submit"
-            className="mt-4 w-fit inline-block border border-gray-300  font-semibold uppercase text-xs px-6 py-3 tracking-wide hover:bg-gray-100 transition"
+            className="mt-4 w-fit inline-block border border-gray-300  font-semibold uppercase text-xs px-6 py-3 tracking-wide hover:bg-gray-100 hover:text-black cursor-pointer transition"
             >
             Subscribe
           </button>

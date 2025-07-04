@@ -110,14 +110,13 @@ const ProductDetails = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
+          <h1 className="text-[30px] font-medium leading-[36.9px] tracking-[0.15px] capitalize mt-5 m-0 p-0 antialiased">{product.name}</h1>
 
           {/* Price & Discount */}
-          <div className="flex items-center gap-4">
-            <span className="text-black text-2xl font-bold">
-              ${product.price.toLocaleString()}
-            </span>
-          </div>
+          <bdi className="antialiased font-semibold">
+            <span className="antialiased">$</span>{product.price.toLocaleString()}
+          </bdi>
+
 
           {/* Description */}
           <p className="text-gray-600 leading-6 max-w-lg text-sm mt-2">
@@ -128,15 +127,15 @@ const ProductDetails = () => {
           {/* Quantity Selector for Desktop */}
           <div className="hidden sm:flex items-center gap-2 mt-4">
             <div className="flex items-center border border-gray-700 gap-4 text-lg font-medium">
-              <button onClick={decrease} className="px-3 py-3">
+              <button onClick={decrease} className="px-3 cursor-pointer hover:text-[#C69657] py-3">
                 <HiOutlineMinus />
               </button>
               <span>{quantity}</span>
-              <button onClick={increase} className="px-3 py-3">
+              <button onClick={increase} className="px-3 cursor-pointer hover:text-[#C69657] py-3">
                 <GoPlus />
               </button>
             </div>
-            <button onClick={handleAdd} className="bg-black uppercase text-white px-14 font-semibold cursor-pointer py-3 text-sm hover:bg-gray-800 w-full sm:w-auto">
+            <button onClick={handleAdd} className="bg-black uppercase text-white px-14 font-semibold cursor-pointer py-3 text-sm hover:bg-[#C69657] w-full sm:w-auto">
               Add to Cart
             </button>
           </div>
