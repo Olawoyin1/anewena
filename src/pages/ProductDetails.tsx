@@ -269,16 +269,16 @@ const ProductDetails = () => {
       {/* Fixed bottom quantity selector for mobile */}
       <div className="fixed bottom-0 left-0 w-full sm:hidden bg-white border-t z-50">
         <div className="flex items-center  px-4 py-3 gap-2">
-          <div className="flex items-center border border-gray-700 gap-4 text-lg font-medium">
+          <div className="flex items-center border border-gray-700 gap-4 text-xs md:text-lg font-medium">
             <button onClick={decrease} className="px-3 py-3">
               <HiOutlineMinus />
             </button>
-            <span>{quantity}</span>
+            <span className="text-lg">{quantity}</span>
             <button onClick={increase} className="px-3 py-3">
               <GoPlus />
             </button>
           </div>
-          <button onClick={handleAdd} className="bg-black w-full uppercase col-span-2 text-white px-6 py-3 text-sm hover:bg-gray-800">
+          <button onClick={handleAdd} className="bg-black w-full uppercase col-span-2 text-white px-6 py-3 text-xs md:text-sm hover:bg-gray-800">
             Add to Cart
           </button>
         </div>

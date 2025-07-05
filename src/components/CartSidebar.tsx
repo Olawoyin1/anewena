@@ -96,14 +96,14 @@ const CartSidebar = () => {
               <div className="grid grid-cols-2 gap-3">
                 <Link
                   to="/cart"
-                  className="block w-full uppercase text-sm text-center border border-gray-700 bg-white py-3 hover:bg-black hover:text-white font-semibold"
+                  className="block w-full uppercase text-xs md:text-sm text-center border border-gray-700 bg-white py-3 hover:bg-black hover:text-white font-semibold"
                   onClick={toggleCart}
                 >
                   View Cart
                 </Link>
                 <Link
                   to="/checkout"
-                  className="block w-full uppercase text-sm text-center font-semibold bg-black text-white py-3 hover:bg-[#C69657]"
+                  className="block w-full uppercase text-xs md:text-sm text-center font-semibold bg-black text-white py-3 hover:bg-[#C69657]"
                   onClick={toggleCart}
                 >
                   Checkout
