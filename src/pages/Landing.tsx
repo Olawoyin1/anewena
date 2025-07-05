@@ -60,7 +60,7 @@ const Landing = () => {
 
           <a
             href="/shop"
-            className="mt-6 block w-full text-center md:inline-flex items-center justify-center text-white text-[12px] font-semibold uppercase tracking-[0.72px] px-[50px] py-[18px] bg-black border border-black hover:bg-gray-900"
+            className="mt-6 block w-full md:w-fit text-center md:inline-flex items-center justify-center text-white text-[12px] font-semibold uppercase tracking-[0.72px] px-[50px] py-[18px] bg-black border border-black hover:bg-gray-900"
           >
             Enter
           </a>

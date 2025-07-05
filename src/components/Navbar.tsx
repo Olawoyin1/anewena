@@ -46,14 +46,14 @@ const HeaderBar = () => {
         </div>
 
         {/* Icons (Desktop) */}
-        <div className="hidden md:flex items-center gap-4 text-gray-600 text-xl relative">
+        <div className="hidden md:flex items-center gap-4 text-gray-600 text-2xl relative">
           <Link to="/"><PiTiktokLogoThin /></Link>
           <Link to="/"><IoLogoInstagram /></Link>
           <Link to="/login"><LuUserRound /></Link>
 
           {/* Cart Icon with Badge */}
           <button onClick={toggleCart} className="relative">
-            <IoCartOutline />
+            <IoCartOutline  />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">
                 {cartCount}
@@ -64,7 +64,7 @@ const HeaderBar = () => {
 
         {/* Mobile Cart Icon with Badge */}
         <div className="md:hidden relative">
-          <button onClick={toggleCart} aria-label="Cart" className="text-2xl relative">
+          <button onClick={toggleCart} aria-label="Cart" className="text-4xl relative">
             <IoCartOutline />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">
