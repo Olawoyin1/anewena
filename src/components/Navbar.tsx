@@ -115,7 +115,7 @@ const HeaderBar = () => {
       </nav>
 
       {/* Info section above footer icons */}
-      <div className="px-6 py-4 uppercase flex flex-col gap-2 text-sm text-gray-800 border-t border-gray-200">
+      <div className="mt-auto mb-14 px-6 py-4 uppercase flex flex-col gap-2 text-sm text-gray-800 ">
          <li className="text-[12px] font-semibold uppercase tracking-wide hover:opacity-70 transition">PHONE : +1 712-339-9294</li>
         <li className="text-[12px] font-semibold uppercase tracking-wide hover:opacity-70 transition">EMAIL : INFO@IDEAISCAPITAL.COM</li>
         <p>Contact: support@anewwena.com</p>
