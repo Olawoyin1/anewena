@@ -6,6 +6,18 @@
     list-style: none;
 }
 
+.no-scrollbar {
+  overflow: auto;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 
 button{
     cursor: pointer;
