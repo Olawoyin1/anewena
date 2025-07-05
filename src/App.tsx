@@ -19,7 +19,9 @@ function App() {
   return (
     <>
     <CartSidebar />
-    <Toaster position="top-center" richColors />
+    <Toaster position="top-center"   toastOptions={{
+    className: "flex shadow justify-center w-fit",
+  }} richColors />
     <ScrollToTop />
      <Routes>
           <Route path="/" element={<Landing />} />

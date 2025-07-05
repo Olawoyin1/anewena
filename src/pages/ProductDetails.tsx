@@ -39,12 +39,16 @@ const ProductDetails = () => {
 
   const handleAdd = () => {
     if (!selectedColor) {
-      toast.error("Please select your preferred color.");
+      toast("Please select your preferred color.", {
+        classNames: {
+          toast: "text-center",
+        },
+      });
       return;
     }
 
     if (!selectedSize) {
-      toast.error("Please select your preferred size.");
+      toast("Please select your preferred size.");
       return;
     }
 
@@ -274,7 +278,7 @@ const ProductDetails = () => {
               <GoPlus />
             </button>
           </div>
-          <button className="bg-black w-full uppercase col-span-2 text-white px-6 py-3 text-sm hover:bg-gray-800">
+          <button onClick={handleAdd} className="bg-black w-full uppercase col-span-2 text-white px-6 py-3 text-sm hover:bg-gray-800">
             Add to Cart
           </button>
         </div>
