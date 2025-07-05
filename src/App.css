@@ -7,3 +7,28 @@
 }
 
 
+button{
+    cursor: pointer;
+}
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  color: #C69657;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #C69657; /* customize color */
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #C69657;
+}
+
+/* For Firefox */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #C69657;
+}

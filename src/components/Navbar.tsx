@@ -1,30 +1,35 @@
+
+
 import { useState } from "react";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { PiTiktokLogoThin } from "react-icons/pi";
 import { LuUserRound } from "react-icons/lu";
 import { RiInstagramFill } from "react-icons/ri";
-import { IoCartOutline } from "react-icons/io5";
-import { IoLogoWhatsapp } from "react-icons/io";
+import { IoCartOutline, IoLogoWhatsapp, IoLogoInstagram } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { IoLogoInstagram } from "react-icons/io5";
+import { useCartStore } from "../utils/cartStore";
 
 const HeaderBar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const toggleCart = useCartStore((state) => state.toggleCart);
+  const cartCount = useCartStore((state) =>
+    state.cartItems.reduce((sum, item) => sum + item.quantity, 0)
+  );
 
   return (
     <header className="w-full bg-white sticky top-0 z-50 border-b border-gray-200">
       <div className="px-4 md:px-10 py-5 flex items-center justify-between">
 
-        {/* Desktop: Logo Left */}
+        {/* Logo (Desktop) */}
         <div className="hidden md:flex">
           <Link to="/shop">
             <h3 className="tracking-[8px] text-2xl font-extrabold">ANEWWENA</h3>
           </Link>
         </div>
 
-        {/* Mobile: Menu Icon */}
+        {/* Hamburger Menu (Mobile) */}
         <div className="md:hidden">
           <RxHamburgerMenu
             onClick={() => setMobileMenuOpen(true)}
@@ -33,30 +38,44 @@ const HeaderBar = () => {
           />
         </div>
 
-        {/* Mobile: Center Logo */}
+        {/* Center Logo (Mobile) */}
         <div className="md:hidden absolute left-1/2 transform -translate-x-1/2">
           <Link to="/shop">
             <h3 className="tracking-[4px] text-xl font-extrabold">ANEWWENA</h3>
           </Link>
         </div>
 
-        {/* Desktop: Icons Right */}
-        <div className="hidden md:flex items-center gap-4 text-gray-600 text-xl">
+        {/* Icons (Desktop) */}
+        <div className="hidden md:flex items-center gap-4 text-gray-600 text-xl relative">
           <Link to="/"><PiTiktokLogoThin /></Link>
           <Link to="/"><IoLogoInstagram /></Link>
           <Link to="/login"><LuUserRound /></Link>
-          <Link to="/"><IoCartOutline /></Link>
+
+          {/* Cart Icon with Badge */}
+          <button onClick={toggleCart} className="relative">
+            <IoCartOutline />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </button>
         </div>
 
-        {/* Mobile: Cart Icon Right */}
-        <div className="md:hidden">
-          <Link to="/cart" aria-label="Cart" className="text-2xl">
+        {/* Mobile Cart Icon with Badge */}
+        <div className="md:hidden relative">
+          <button onClick={toggleCart} aria-label="Cart" className="text-2xl relative">
             <IoCartOutline />
-          </Link>
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Slide-in Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -66,7 +85,6 @@ const HeaderBar = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-white z-50 flex flex-col p-6"
           >
-            {/* Close Button */}
             <div className="flex justify-end mb-4">
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -76,7 +94,6 @@ const HeaderBar = () => {
               </button>
             </div>
 
-            {/* Mobile Nav Items */}
             <nav className="flex flex-col gap-6 text-lg text-gray-800">
               <a href="#">Home</a>
               <a href="#">Shop</a>
@@ -84,7 +101,6 @@ const HeaderBar = () => {
               <a href="#">Contact</a>
             </nav>
 
-            {/* Social Icons Bottom */}
             <div className="mt-auto pt-6 flex justify-center gap-4 text-xl text-gray-600">
               <a href="#"><FaFacebookF /></a>
               <a href="#"><RiInstagramFill /></a>

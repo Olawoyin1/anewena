@@ -47,7 +47,7 @@ const CustomProductGrid = () => {
         </div>
 
         {/* Custom Pagination */}
-        <div className="flex justify-center items-center gap-2 mt-8">
+        <div className="flex mb-10 justify-center items-center gap-2 mt-8">
           {/* Prev button if not on first page */}
           {page > 1 && (
             <button

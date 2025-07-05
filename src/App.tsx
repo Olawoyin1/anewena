@@ -12,6 +12,7 @@ import CartSidebar from './components/CartSidebar'
 import ScrollToTop from './components/ScrollToTop'
 import FAQ from './components/FAQ'
 import { Toaster } from "sonner";
+import CartPage from './pages/CartPage'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
     </>

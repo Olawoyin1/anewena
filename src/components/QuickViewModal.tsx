@@ -1,9 +1,12 @@
+
+
 import { useEffect, useRef, useState } from "react";
 import { Product } from "../Types/ProductsTypes";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { HiOutlineMinus } from "react-icons/hi2";
 import { GoPlus } from "react-icons/go";
+import { useCartStore } from "../utils/cartStore"; // ✅ import Zustand cart store
 
 interface QuickViewModalProps {
   product: Product | null;
@@ -25,6 +28,10 @@ const QuickViewModal = ({ product, isOpen, onClose }: QuickViewModalProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
   const [quantity, setQuantity] = useState(1);
+
+  // ✅ Zustand functions
+  const addToCart = useCartStore((state) => state.addToCart);
+  const toggleCart = useCartStore((state) => state.toggleCart);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -71,6 +78,13 @@ const QuickViewModal = ({ product, isOpen, onClose }: QuickViewModalProps) => {
     setQuantity(quantity + 1);
   };
 
+  // ✅ Add to cart handler
+  const handleAddToCart = () => {
+    addToCart({ ...product, quantity });
+    toggleCart(); // Open the side cart
+    onClose();    // Optionally close modal
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -83,7 +97,7 @@ const QuickViewModal = ({ product, isOpen, onClose }: QuickViewModalProps) => {
         >
           <motion.div
             ref={modalRef}
-            className="bg-white overflow-hidden shadow-lg p-8 border border-gray-500 w-full max-w-4xl h-[440px] flex flex-col md:flex-row items-center relative"
+            className="bg-white overflow-hidden shadow p-8 border border-gray-500 w-full max-w-4xl h-[440px] flex flex-col md:flex-row items-center relative"
             variants={modal}
             initial="hidden"
             animate="visible"
@@ -98,7 +112,7 @@ const QuickViewModal = ({ product, isOpen, onClose }: QuickViewModalProps) => {
               <IoClose />
             </button>
 
-            {/* Image Slider Section (hover-sensitive) */}
+            {/* Image Slider */}
             <div className="relative w-full md:w-1/2 h-80 md:h-full flex items-center justify-center group/image">
               <img
                 src={product.images[currentIndex]}
@@ -106,7 +120,7 @@ const QuickViewModal = ({ product, isOpen, onClose }: QuickViewModalProps) => {
                 className="w-full h-full object-contain"
               />
 
-              {/* Slide Buttons - only visible when hovering over image container */}
+              {/* Slide Buttons */}
               <button
                 onClick={prevSlide}
                 className="absolute bg-white border border-gray-400  left-2 top-1/2 transform -translate-y-1/2 hover:bg-black cursor-pointer hover:text-white p-2 rounded-full opacity-0 group-hover/image:opacity-100 transition"
@@ -143,7 +157,10 @@ const QuickViewModal = ({ product, isOpen, onClose }: QuickViewModalProps) => {
                     <GoPlus />
                   </button>
                 </div>
-                <button className="bg-black text-white px-6 py-3 text-sm hover:bg-gray-800 w-full sm:w-auto">
+                <button
+                  onClick={handleAddToCart}
+                  className="bg-black uppercase text-white px-14 font-semibold cursor-pointer py-3 text-sm hover:bg-[#C69657] w-full"
+                >
                   Add to Cart
                 </button>
               </div>

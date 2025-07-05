@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Footer from "./Footer";
+import { motion } from "framer-motion";
+import { GoPlus } from "react-icons/go";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 type FAQItem = {
   id: number;
@@ -59,70 +60,63 @@ const faqs: FAQItem[] = [
       "You can reach us via our Contact page or email support@yourstore.com. We're available 24/7.",
   },
 ];
-
 const FAQ = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const handleFaqToggle = (id: number) => {
+  const toggleFAQ = (id: number) => {
     setOpenFAQ(openFAQ === id ? null : id);
   };
 
   return (
-
     <>
-    <Navbar />
+      <Navbar />
+      <h3 className="font-bold text-[24px] leading-[33px] tracking-[-0.36px] uppercase text-center p-4 border-b border-gray-200">FAQ</h3>
 
-    <h3 className="text-center p-4 border-b border-gray-200" >FAQ</h3>
-    <motion.div
-      className="max-w-6xl mx-auto  border border-gray-200 px-4 py-12"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      <motion.div
+        className="max-w-6xl mx-auto border border-gray-200 px-4 py-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-      
+        <div className="w-[620px] max-w-full mx-auto">
+          {faqs.map((faq) => {
+            const isOpen = openFAQ === faq.id;
+            return (
+              <div key={faq.id} className="border-b border-gray-200 transition-all duration-300">
+                <div className="flex justify-between items-center">
+                  <p className="relative block hover:text-[#C69657] pr-[30px] pt-[15px] pb-[17px] font-medium text-[17px] leading-[24px] tracking-[-0.1275px] transition-all duration-150 ease-linear">
+                    {faq.question}
+                  </p>
 
-      <div className=" w-[620px] max-w-full mx-auto">
-        {faqs.map((faq) => (
-          <motion.div
-            key={faq.id}
-            className="bg-white  rounded-md  p-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: faq.id * 0.05 }}
-          >
-            <div className="flex justify-between items-center">
-              <div className="flex items-start gap-3">
-                <p className="font-semibold text-gray-800">{faq.question}</p>
-              </div>
-              <motion.button
-                onClick={() => handleFaqToggle(faq.id)}
-                whileTap={{ scale: 0.9 }}
-                className="text-2xl font-bold text-gray-600 focus:outline-none"
-              >
-                {openFAQ === faq.id ? "−" : "+"}
-              </motion.button>
-            </div>
+                  {/* Toggle Button with Rotating Icon */}
+                  <button
+                    onClick={() => toggleFAQ(faq.id)}
+                    className={`text-lg font-light cursor-pointer hover:text-[#C69657] transition-transform duration-300 ease-in-out focus:outline-none ${
+                      isOpen ? "rotate-45" : "rotate-0"
+                    }`}
+                    aria-label="Toggle Answer"
+                  >
+                    <GoPlus />
+                  </button>
+                </div>
 
-            <AnimatePresence initial={false}>
-              {openFAQ === faq.id && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="mt-3 overflow-hidden text-sm text-gray-600"
+                {/* Collapsible Answer */}
+                <div
+                  className={`grid overflow-hidden transition-all duration-500 ease-in-out text-sm text-gray-600 ${
+                    isOpen ? "grid-rows-[1fr] opacity-100 py-2" : "grid-rows-[0fr] opacity-0"
+                  }`}
                 >
-                  {faq.answer}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-    <Footer />
-            </>
+                  <div className="overflow-hidden">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </motion.div>
+      <Footer />
+    </>
   );
 };
 

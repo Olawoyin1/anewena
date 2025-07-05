@@ -6,6 +6,10 @@ const AboutUs = () => {
   return (
     <>
       <Navbar />
+
+  <h1 className="text-center border-b border-gray-300 p-4 font-bold text-[24px] leading-[33px] tracking-[-0.36px] uppercase m-0 ">
+  About Us
+</h1>
       <section className="w-full px-4 py-16 bg-white space-y-20">
         {/* Section 1: Text Left, Image Right */}
         <div className="grid max-w-6xl mx-auto md:grid-cols-2 gap-10 items-center">

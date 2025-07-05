@@ -1,5 +1,5 @@
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
-
+import {  FaInstagram } from "react-icons/fa";
+import { PiTiktokLogoThin } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
 const links = [
   { href: "/about", label: "About us" },
@@ -83,18 +83,16 @@ export default function Footer() {
 
       {/* Socials */}
       <div className="w-full md:w-1/3 pl-0 md:pl-[50px] flex justify-center md:justify-start mt-8 md:mt-0">
-        <a href="#" aria-label="Facebook" className="hover:text-black border p-3 border-gray-400 transition">
-          <FaFacebookF />
+        <a href="#" aria-label="Facebook" className="hover:text-[#C69657] border p-3 border-gray-400 transition">
+          <PiTiktokLogoThin size={20} />
         </a>
-        <a href="#" aria-label="Instagram" className="hover:text-black border p-3 border-gray-400 transition">
-          <FaInstagram />
+        <a href="#" aria-label="Instagram" className="hover:text-[#C69657] border p-3 border-gray-400 transition">
+          <FaInstagram size={20} />
         </a>
-        <a href="#" aria-label="Twitter" className="hover:text-black border p-3 border-gray-400 transition">
-          <FaXTwitter />
+        <a href="#" aria-label="Twitter" className="hover:text-[#C69657] border p-3 border-gray-400 transition">
+          <FaXTwitter size={20} />
         </a>
-        <a href="#" aria-label="YouTube" className="hover:text-black border p-3 border-gray-400 transition">
-          <FaYoutube />
-        </a>
+        
       </div>
     </footer>
     </div>
