@@ -2,7 +2,7 @@ const Landing = () => {
   return (
     <div>
       <div
-        className="w-full min-h-screen flex justify-around md:justify-end items-center px-7 py-7 bg-[#dfdfdf] bg-cover bg-no-repeat"
+        className="w-full min-h-screen flex justify-around md:justify-end items-center p-4 md:px-7 md:py-7 bg-[#dfdfdf] bg-cover bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://firebrick-manatee-316512.hostingersite.com/wp-content/uploads/2025/07/Screenshot-2025-04-15-132846.png')",
