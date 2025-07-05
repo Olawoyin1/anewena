@@ -267,7 +267,7 @@ const ProductDetails = () => {
       </div>
 
       {/* Fixed bottom quantity selector for mobile */}
-      <div className="fixed bottom-0 left-0 w-full sm:hidden bg-white border-t z-50">
+      <div className="fixed bottom-0 left-0 w-full sm:hidden bg-white border-t z-30">
         <div className="flex items-center  px-4 py-3 gap-2">
           <div className="flex items-center border border-gray-700 gap-4 text-xs md:text-lg font-medium">
             <button onClick={decrease} className="px-3 py-3">

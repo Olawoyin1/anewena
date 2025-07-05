@@ -1,11 +1,9 @@
 
 
 import { useState } from "react";
-import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { PiTiktokLogoThin } from "react-icons/pi";
 import { LuUserRound } from "react-icons/lu";
-import { RiInstagramFill } from "react-icons/ri";
-import { IoCartOutline, IoLogoWhatsapp, IoLogoInstagram } from "react-icons/io5";
+import { IoCartOutline, IoLogoInstagram } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,39 +75,74 @@ const HeaderBar = () => {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-50 flex flex-col p-6"
+  {isMobileMenuOpen && (
+    <motion.div
+      initial={{ x: "-100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-100%" }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 bg-white z-50 flex flex-col"
+    >
+      {/* Close Button */}
+      <div className="flex justify-end p-6">
+        <button
+          onClick={() => setMobileMenuOpen(false)}
+          className="text-xl font-bold"
+        >
+          ✕
+        </button>
+      </div>
+
+      {/* Nav Links with full-width borders */}
+      <nav className="flex flex-col w-full">
+        {[
+          "Home",
+          "About Us",
+          "FAQ",
+          "Shipping",
+          "Partner With Us",
+        ].map((label, idx, arr) => (
+          <a
+            key={label}
+            href="#"
+            className={`w-full px-6 py-4 uppercase font-semibold text-lg ${
+              idx !== arr.length - 1 ? "border-b border-gray-300" : ""
+            }`}
           >
-            <div className="flex justify-end mb-4">
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xl font-bold"
-              >
-                ✕
-              </button>
-            </div>
+            {label}
+          </a>
+        ))}
+      </nav>
 
-            <nav className="flex flex-col gap-6 text-lg text-gray-800">
-              <a href="#">Home</a>
-              <a href="#">Shop</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-            </nav>
+      {/* Info section above footer icons */}
+      <div className="px-6 py-4 uppercase flex flex-col gap-2 text-sm text-gray-800 border-t border-gray-200">
+         <li className="text-[12px] font-semibold uppercase tracking-wide hover:opacity-70 transition">PHONE : +1 712-339-9294</li>
+        <li className="text-[12px] font-semibold uppercase tracking-wide hover:opacity-70 transition">EMAIL : INFO@IDEAISCAPITAL.COM</li>
+        <p>Contact: support@anewwena.com</p>
+        <p className="">© 2025 Anewwena. All rights reserved.</p>
+      </div>
 
-            <div className="mt-auto pt-6 flex justify-center gap-4 text-xl text-gray-600">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><RiInstagramFill /></a>
-              <a href="#"><IoLogoWhatsapp /></a>
-              <a href="#"><FaYoutube /></a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Fixed bottom icons (evenly spaced) */}
+      <div className="fixed bottom-0 left-0 w-full bg-white  border-gray-300 px-6 py-4">
+        <div className="flex justify-between text-2xl text-gray-700">
+         <Link to="/"><PiTiktokLogoThin /></Link>
+          <Link to="/"><IoLogoInstagram /></Link>
+          <Link to="/login"><LuUserRound /></Link>
+          <button onClick={toggleCart} className="relative cursor-pointer">
+            <IoCartOutline  />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
     </header>
   );
 };
