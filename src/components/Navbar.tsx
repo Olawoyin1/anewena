@@ -52,7 +52,7 @@ const HeaderBar = () => {
           <Link to="/login"><LuUserRound /></Link>
 
           {/* Cart Icon with Badge */}
-          <button onClick={toggleCart} className="relative">
+          <button onClick={toggleCart} className="relative cursor-pointer">
             <IoCartOutline  />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold px-[6px] py-[2px] rounded-full">
