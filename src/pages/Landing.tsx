@@ -2,7 +2,7 @@ const Landing = () => {
   return (
     <div>
       <div
-        className="w-full min-h-screen flex justify-around md:justify-end items-center p-4 md:px-7 md:py-7 bg-[#dfdfdf] bg-cover bg-no-repeat"
+        className="w-full h-[100vh] overflow-hidden flex justify-around md:justify-end items-center p-4 md:px-7 md:py-7 bg-[#dfdfdf] bg-cover bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://firebrick-manatee-316512.hostingersite.com/wp-content/uploads/2025/07/Screenshot-2025-04-15-132846.png')",
@@ -12,7 +12,7 @@ const Landing = () => {
 
         {/* Right side text box */}
         <div className="w-[490px] max-w-full flex flex-col items-start md:justify-end md:mr-30">
-          <div className="w-full bg-white/90 flex flex-col items-start justify-start px-4 md:px-8 py-12 min-h-[310px] relative transition-all">
+          <div className="w-full bg-white/90 flex flex-col items-start justify-start p-10  md:px-8 md:py-12 min-h-[310px] relative transition-all">
             {/* Brand Heading */}
             <div className="mb-6">
               <h1 className="text-2xl md:text-[52px] font-bold leading-[10px] tracking-[20px]">
@@ -22,7 +22,7 @@ const Landing = () => {
 
             {/* Subheading */}
             <div className="mt-3 md:mt-5">
-              <h2 className="text-sm md:text-[17px] font-semibold tracking-[1.1em] text-gray-400 leading-[22px]">
+              <h2 className="text-sm md:text-[17px] text-center md:text-start font-semibold tracking-[1.1em] text-gray-400 leading-[22px]">
                 COLLECTION
               </h2>
             </div>
@@ -37,11 +37,6 @@ const Landing = () => {
                   since the 1500s, when an unknown printer took a galley of type
                   and scrambled it to make a type specimen book. It has survived
                   not only five centuries, but a
-                </p>
-                <p className="mb-4">
-                  ever since the 1500s, when an unknown printer took a galley of
-                  type and scrambled it to make a type specimen book. It has
-                  survived not only five centuries, but a
                 </p>
                 <p className="mb-4">
                   ever since the 1500s, when an unknown printer took a galley of
