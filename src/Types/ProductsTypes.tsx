@@ -9,6 +9,8 @@ export type Product = {
   discountPercentage?: number;
   rating?: number;
   images: string[]; // image[0] is cover, others are for gallery
+  availableColors?: string[];
+  availableSizes?: string[];
 };
 
 

@@ -9,17 +9,23 @@ import ProductDetails from './pages/ProductDetails'
 import AboutUs from './pages/About'
 import Login from './pages/Login'
 import CartSidebar from './components/CartSidebar'
+import ScrollToTop from './components/ScrollToTop'
+import FAQ from './components/FAQ'
+import { Toaster } from "sonner";
 
 function App() {
 
   return (
     <>
     <CartSidebar />
+    <Toaster position="top-center" richColors />
+    <ScrollToTop />
      <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/shop" element={<Products />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
     </>

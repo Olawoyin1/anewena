@@ -8,16 +8,18 @@ import { Link } from "react-router-dom";
 import { GoPlus } from "react-icons/go";
 import { HiOutlineMinus } from "react-icons/hi2";
 import { useCartStore } from "../utils/cartStore";
+import { toast } from "sonner";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id.toString() === id);
   const [selectedImage, setSelectedImage] = useState(product?.images[0]);
   const [quantity, setQuantity] = useState(1);
-   const addToCart = useCartStore((state) => state.addToCart);
-  const toggleCart = useCartStore((state) => state.toggleCart);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
-  
+  const addToCart = useCartStore((state) => state.addToCart);
+  const toggleCart = useCartStore((state) => state.toggleCart);
 
   useEffect(() => {
     if (product) {
@@ -35,20 +37,33 @@ const ProductDetails = () => {
     setQuantity(quantity + 1);
   };
 
-
   const handleAdd = () => {
-  if (!product) return;
-  const cartItem = { ...product, quantity }; // now it's a CartItem
-  addToCart(cartItem);
-  toggleCart();
-};
+    if (!selectedColor) {
+      toast.error("Please select your preferred color.");
+      return;
+    }
 
+    if (!selectedSize) {
+      toast.error("Please select your preferred size.");
+      return;
+    }
 
+    const cartItem = {
+      ...product,
+      quantity,
+      selectedColor,
+      selectedSize,
+    };
+
+    addToCart(cartItem);
+    toggleCart();
+    toast.success("Item added to cart!");
+  };
 
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-10">
+      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-1 items-center md:gap-10">
         {/* Left: Image section */}
         <div className="flex flex-col h-[500px] items-center">
           {/* Main Image with Fade Effect */}
@@ -110,32 +125,121 @@ const ProductDetails = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-[30px] font-medium leading-[36.9px] tracking-[0.15px] capitalize mt-5 m-0 p-0 antialiased">{product.name}</h1>
+          <h1 className="text-[30px] font-medium leading-[36.9px] tracking-[0.15px] capitalize mt-5 m-0 p-0 antialiased">
+            {product.name}
+          </h1>
 
           {/* Price & Discount */}
           <bdi className="antialiased font-semibold">
-            <span className="antialiased">$</span>{product.price.toLocaleString()}
+            <span className="antialiased">$</span>
+            {product.price.toLocaleString()}
           </bdi>
-
 
           {/* Description */}
           <p className="text-gray-600 leading-6 max-w-lg text-sm mt-2">
             {product.description}
           </p>
 
+          {/* Color Selection */}
+          <div className="mt-6">
+            <p className="uppercase antialiased font-bold text-sm mb-3">
+              Color
+            </p>
+            <div className="flex gap-2">
+              {["beige", "black", "white"].map((color) => {
+                const isAvailable = product.availableColors?.includes(color);
+                const isSelected = selectedColor === color;
+
+                const colorClasses: Record<string, string> = {
+                  beige: "bg-[#C9B89A]", // Darker beige
+                  black: "bg-black",
+                  white: "bg-white border",
+                };
+
+                return (
+                  <button
+                    key={color}
+                    type="button"
+                    disabled={!isAvailable}
+                    onClick={() => isAvailable && setSelectedColor(color)}
+                    className={`
+            relative transition-all duration-200 ease-in-out
+            rounded-full  flex items-center justify-center
+            ${isSelected ? "w-7 h-7" : "w-6 h-6"}
+            ${colorClasses[color]}
+            ${!isAvailable ? "opacity-40 cursor-not-allowed" : "cursor-pointer"}
+          `}
+                  >
+                    {isSelected && (
+                      <span
+                        className={`absolute inset-0 flex items-center justify-center text-[10px] font-bold ${
+                          color === "white" ? "text-black" : "text-white"
+                        }`}
+                      >
+                        ✓
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Size Selection */}
+          <div className="mt-6">
+            <p className="uppercase antialiased  font-bold text-sm mb-3">
+              Size
+            </p>
+            <div className="flex gap-3">
+              {["Large", "Medium", "Small"].map((size) => {
+                const isAvailable = product.availableSizes?.includes(size);
+                return (
+                  <button
+                    key={size}
+                    type="button"
+                    disabled={!isAvailable}
+                    onClick={() => setSelectedSize(size)}
+                    className={`border-1 border-gray-400 px-4 py-2 text-sm  
+            ${
+              selectedSize === size
+                ? "border ring-1 border-gray-900"
+                : "bg-white text-black"
+            }
+            ${
+              isAvailable
+                ? "hover:border-black hover:"
+                : "opacity-40 cursor-not-allowed"
+            }`}
+                  >
+                    {size}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Quantity Selector */}
           {/* Quantity Selector for Desktop */}
           <div className="hidden sm:flex items-center gap-2 mt-4">
             <div className="flex items-center border border-gray-700 gap-4 text-lg font-medium">
-              <button onClick={decrease} className="px-3 cursor-pointer hover:text-[#C69657] py-3">
+              <button
+                onClick={decrease}
+                className="px-3 cursor-pointer hover:text-[#C69657] py-3"
+              >
                 <HiOutlineMinus />
               </button>
               <span>{quantity}</span>
-              <button onClick={increase} className="px-3 cursor-pointer hover:text-[#C69657] py-3">
+              <button
+                onClick={increase}
+                className="px-3 cursor-pointer hover:text-[#C69657] py-3"
+              >
                 <GoPlus />
               </button>
             </div>
-            <button onClick={handleAdd} className="bg-black uppercase text-white px-14 font-semibold cursor-pointer py-3 text-sm hover:bg-[#C69657] w-full sm:w-auto">
+            <button
+              onClick={handleAdd}
+              className="bg-black uppercase text-white px-14 font-semibold cursor-pointer py-3 text-sm hover:bg-[#C69657] w-full sm:w-auto"
+            >
               Add to Cart
             </button>
           </div>

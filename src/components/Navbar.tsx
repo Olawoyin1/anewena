@@ -42,10 +42,10 @@ const HeaderBar = () => {
 
         {/* Desktop: Icons Right */}
         <div className="hidden md:flex items-center gap-4 text-gray-600 text-xl">
-          <a href="#"><PiTiktokLogoThin /></a>
-          <a href="#"><IoLogoInstagram /></a>
-          <a href="#"><LuUserRound /></a>
-          <a href="#"><IoCartOutline /></a>
+          <Link to="/"><PiTiktokLogoThin /></Link>
+          <Link to="/"><IoLogoInstagram /></Link>
+          <Link to="/login"><LuUserRound /></Link>
+          <Link to="/"><IoCartOutline /></Link>
         </div>
 
         {/* Mobile: Cart Icon Right */}

@@ -17,6 +17,8 @@ export const products: Product[] = [
       "../../Images/ajui.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Medium", "Large"], // no Large
   },
   {
     id: 2,
@@ -32,6 +34,8 @@ export const products: Product[] = [
       "../../Images/ajui2.png",
         "../../Images/kara1.jpg",
     ],
+    availableColors: ["beige", "black", "white"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 3,
@@ -47,6 +51,8 @@ export const products: Product[] = [
       "../../Images/ajui2.png",
         "../../Images/kara.jpg",
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Large"], // no Large
   },
   {
     id: 4,
@@ -63,6 +69,8 @@ export const products: Product[] = [
       "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["beige", "white"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 5,
@@ -81,6 +89,8 @@ export const products: Product[] = [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["white", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
 
 
@@ -99,6 +109,8 @@ export const products: Product[] = [
       "../../Images/ajui2.png",
 
     ],
+    availableColors: ["beige", "white"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 102,
@@ -115,6 +127,8 @@ export const products: Product[] = [
         "../../Images/kara.jpg",
 
     ],
+    availableColors: ["white", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 103,
@@ -131,6 +145,8 @@ export const products: Product[] = [
       "../../Images/ajui2.png",
         "../../Images/kara.jpg",
     ],
+    availableColors: ["beige", "black", "white"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 104,
@@ -146,6 +162,8 @@ export const products: Product[] = [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["beige", "black", "white"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 105,
@@ -161,6 +179,8 @@ export const products: Product[] = [
       "../../Images/ajui2.png",
         "../../Images/kara.jpg",
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 106,
@@ -176,6 +196,8 @@ export const products: Product[] = [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 107,
@@ -191,6 +213,8 @@ export const products: Product[] = [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 108,
@@ -206,6 +230,8 @@ export const products: Product[] = [
         "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 109,
@@ -222,6 +248,8 @@ export const products: Product[] = [
         "../../Images/ajui2.png",
         
     ],
+    availableColors: ["beige", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
 
   },
   {
@@ -231,7 +259,7 @@ export const products: Product[] = [
       "Lunarys Large Side Table Natural is a modern outdoor piece, the stone side table’s body and legs are crafted in natural sandblaster beige limestone, delivering a raw yet luxurious style to any contemporary outdoor project.",
     price: 3000,
     brand: "Hommes Studio",
-    slug: "lunarys-large-side-table-natural",
+    slug: "lunarys-Large-side-table-natural",
     images: [
         "../../Images/kara.jpg",
         "../../Images/kara.jpg",
@@ -239,6 +267,8 @@ export const products: Product[] = [
       "../../Images/ajui2.png",
         "../../Images/kara.jpg",
     ],
+    availableColors: ["white", "black"], // only beige and black
+    availableSizes: ["Small", "Medium"], // no Large
   },
   {
     id: 111,
@@ -254,6 +284,8 @@ export const products: Product[] = [
       "../../Images/kara.jpg",
       "../../Images/ajui2.png",
     ],
+    availableColors: ["white", "black"], // only beige and black
+    availableSizes: ["Large", "Medium"], // no Large
   },
   // continue adding slug for the rest of the products...
 ];
